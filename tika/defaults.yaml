@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+tika:
+  package: tika-server
+  baseurl: https://www.apache.org/dist/tika/
+  web_package: tika-server
+  web_extension: 'jar'
+  version: 1.16
+  user: tika
+  listen_ip: 127.0.0.1
+  listen_port: 9998

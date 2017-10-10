@@ -1,0 +1,5 @@
+{% from "tika/map.jinja" import tika with context -%}
+
+JAVA_OPTS="{{ tika.java_opts | default() }}"
+HOST="{{ tika.listen_host | default('127.0.0.1') }}"
+PORT="{{ tika.listen_port | default(9998) }}"

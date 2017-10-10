@@ -1,0 +1,16 @@
+{% from "tika/map.jinja" import tika with context -%}
+{% set tika_pkg = tika.web_package ~ '-' ~ tika.version ~ '.' ~ tika.web_extension -%}
+
+[Unit]
+Description=The Apache Tika toolkit detects and extracts metadata and text
+
+[Service]
+User={{ tika.user }}
+WorkingDirectory=/opt/tika
+EnvironmentFile=/etc/sysconfig/tika
+SyslogIdentifer=tika-server
+ExecStart=/bin/bash -c "/usr/bin/java $JAVA_OPTS -jar /opt/tika/{{ tika_pkg }} --host=$HOST --port=$PORT"
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

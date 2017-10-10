@@ -1,0 +1,11 @@
+tika:
+  lookup:
+    user: tika
+    tika_ver: 1.16
+    tika_baseurl: https://www.apache.org/dist/tika/
+    tika_java_opts:
+      - Xms256m
+      - Xmx1024m
+
+  listen_ip: *
+  listen_port: 9998
